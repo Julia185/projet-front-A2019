@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a6fae14-bd50-461e-966f-dcabe4ccdeb5/deploy-status)](https://app.netlify.com/sites/frontend-jrolland/deploys)
+
 # Counters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
