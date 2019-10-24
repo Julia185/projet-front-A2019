@@ -11,7 +11,6 @@ export class AppComponent {
   title = 'counters';
 
   reset() {
-    
-  }
-  
+    this.counterService.reset();
+  }  
 }
