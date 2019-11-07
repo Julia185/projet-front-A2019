@@ -16,13 +16,12 @@ export class CounterComponent implements OnInit {
   constructor( public counterService: CounterService ) { }
 
   ngOnInit() {
-    
+
     this.counterService.getCounterValue(this.position).subscribe(counter => this.value= counter);
   }
 
   increment() {
    /* this.counterService.increment(this.position); */
-   
  
     this.counterService.increment().subscribe(counter => this.value = counter);
   }
