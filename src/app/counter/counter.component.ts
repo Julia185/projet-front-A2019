@@ -10,22 +10,21 @@ import { Counter } from '../counter';
 })
 
 export class CounterComponent implements OnInit {
-  title = "compteur 1"
+  title = "Counter"
   @Input() position :number;
   value: Counter;
-  constructor( public counterService: CounterService ) { 
-    
-  }
+  constructor( public counterService: CounterService ) { }
+
   ngOnInit() {
+    
     this.counterService.getCounterValue(this.position).subscribe(counter => this.value= counter);
   }
 
   increment() {
    /* this.counterService.increment(this.position); */
    
-   if(this.position+41 === 43){
+ 
     this.counterService.increment().subscribe(counter => this.value = counter);
-  }
   }
 
 }
