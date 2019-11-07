@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Counter } from './counter';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import {Counter} from './counter';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +15,18 @@ export class CounterService {
     this.initiaValue = [0, 0, 0];
   }
 
-  /* increment(position: number): number {
-    this.initiaValue[position]++;
-    return this.initiaValue[position];
-  }  */
+  /*increment(position: number): number {
+    this.initialValue[position]++;
+    return this.initialValue[position];
+  } */
 
   increment(): Observable<Counter>{
     this.httpClient.patch("https://lp4asgadot.herokuapp.com/counters/43.json",{"value" : 1}).subscribe();
     return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/43.json");
   }
 
-  getCounterValue(id: number): Observable<Counter>  {
-    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+(id+41)+".json")
+  getCounterValue(id: number): Observable<Counter> {
+    return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters"+(id+41)+".json");
   }
 }
+

@@ -8,6 +8,7 @@ import { Counter } from '../counter';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })
+
 export class CounterComponent implements OnInit {
   title = "compteur 1"
   @Input() position :number;
@@ -20,7 +21,7 @@ export class CounterComponent implements OnInit {
   }
 
   increment() {
-    this.counterService.increment(this.position); 
+   /* this.counterService.increment(this.position); */
    
    if(this.position+41 === 43){
     this.counterService.increment().subscribe(counter => this.value = counter);
