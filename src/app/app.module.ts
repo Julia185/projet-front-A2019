@@ -26,7 +26,7 @@ import { CounterCardComponent } from './counter-card/counter-card.component';
     NavbarComponent,
     HomeComponent,
     ProfileComponent    
-    CounterDetailComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
