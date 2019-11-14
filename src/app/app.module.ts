@@ -17,7 +17,6 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
-import { CounterComponent } from './counter/counter.component';
 
 
 @NgModule({

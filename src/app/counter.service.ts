@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {Counter} from './counter';
 import {Observable} from 'rxjs';
 
@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 
 export class CounterService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
   
   baseUrl = 'https://lp4asgadot.herokuapp.com/counters/'
   allurl = "https://lp4asgadot.herokuapp.com/counters.json"
