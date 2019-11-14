@@ -32,11 +32,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.counterService.getCounters()
-      .subscribe((_counters) => {
-        _counters.forEach((_counter) => {
-          // ajout des compteurs dans le tableau
-          this.counters.push(_counter);
-        });
+    .subscribe((_counters) => {
+      _counters.forEach((_counter) => {
+        this.counters.push(_counter);
       });
+    });
   }
 }

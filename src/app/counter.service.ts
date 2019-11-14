@@ -8,14 +8,13 @@ import {Observable} from 'rxjs';
 })
 
 export class CounterService {
-  //public initiaValue = [12, 5, 18];
-  private counterUrl = 'https://lp4asgadot.herokuapp.com/counters/';
-  private countersUrl = 'https://lp4asgadot.herokuapp.com/counters.json';
 
   constructor(private http: HttpClient) { }
+  
+  baseUrl = 'https://lp4asgadot.herokuapp.com/counters/'
+  allurl = "https://lp4asgadot.herokuapp.com/counters.json"
 
   reset() {
-    //this.initiaValue = [0, 0, 0];
   }
 
   /*increment(position: number): number {
@@ -23,16 +22,18 @@ export class CounterService {
     return this.initialValue[position];
   } */
 
-  increment(): Observable<Counter>{
-    return this.http.patch<Counter>(this.counterUrl + id + '.json', {});
+  increment(id:number): Observable<Counter>{
+    
+    this.httpClient.patch(this.baseUrl+id+".json",{"value" : 1}).subscribe();
+    return this.httpClient.get<Counter>(this.baseUrl+id+".json");
   }
 
   getCounter(id: number): Observable<Counter> {
-    return this.http.get<Counter>(this.counterUrl + id + '.json');
+  return this.httpClient.get<Counter>(this.baseUrl+id+".json")
   }
 
   getCounters(): Observable<Counter[]> {
-    return this.http.get<Counter[]>(this.countersUrl);
+  return this.httpClient.get<Counter[]>(this.allurl);
   }
- 
+
 }

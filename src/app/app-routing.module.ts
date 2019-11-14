@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './auth.guard';
-import { CounterDetailComponent }  from './counter-detail/counter-detail.component';
+import { CounterComponent } from './counter/counter.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -14,11 +14,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
-  { 
-    path: 'counter/:id', 
-    component: CounterDetailComponent
-  },
-  
+  { path: 'counter/:id', component: CounterComponent },
+
 ];
 
 @NgModule({

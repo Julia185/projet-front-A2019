@@ -5,8 +5,4 @@ export class Counter {
     created_at: string;
     updated_at: string;
     url: string;
-
-    constructor() {
-
-    }
 }
