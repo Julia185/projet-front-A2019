@@ -8,7 +8,7 @@
         <a mat-list-item routerLink="/">Home</a>
   
         <a mat-list-item routerLink="profile" *ngIf="auth.loggedIn">Profile</a>
-  
+       
         <a mat-list-item [matMenuTriggerFor]="menu">
           Tous les Compteurs
           <mat-icon aria-hidden="false" aria-label="Example home icon">expand_more</mat-icon>
@@ -18,3 +18,27 @@
             mat-menu-item
             *ngFor='let counter of counters'
             [routerLink]="'counter/' + counter.id">{{ counter.name }}</button>
+        </mat-menu>
+  
+      </mat-nav-list>
+      <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+      <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>---COUNTER---</span>
+        
+      </mat-toolbar>
+      <div class="content">
+          <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
