@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import { ActionCableService } from 'angular2-actioncable';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ActionCableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
