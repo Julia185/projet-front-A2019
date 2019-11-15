@@ -22,14 +22,14 @@ export class CounterComponent implements OnInit {
   ngOnInit() {
       this.route.params.subscribe(
         () => {
-          this.getCounter();
+          this.getCounters();
         }
       )
   }
 
-  getCounter() {
+  getCounters() {
     this.counter.id = +this.route.snapshot.paramMap.get('id'); 
-    this.counterService.getCounter(this.counter.id)
+    this.counterService.getCounters(this.counter.id)
       .subscribe(counter => {
         this.counter = counter;
       });
